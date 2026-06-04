@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1100px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    text-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+.game-wrapper {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.scoreboard {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 180px;
+}
+
+.player-score {
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+.player-score.active {
+    border-color: #4CAF50;
+    box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
+}
+
+.player-score h3 {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.player-score .score {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #FFD700;
+}
+
+.player-score .status {
+    margin-top: 8px;
+    font-size: 0.85em;
+    color: #aaa;
+}
+
+.turn-indicator {
+    background: rgba(0,0,0,0.3);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+#currentTurn {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-bottom: 8px;
+}
+
+#ballOn {
+    font-size: 1em;
+    color: #ddd;
+    margin-bottom: 8px;
+}
+
+#message {
+    font-size: 0.9em;
+    color: #ff9800;
+    min-height: 20px;
+}
+
+.table-container {
+    flex: 1;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5), inset 0 0 50px rgba(0,0,0,0.3);
+    border: 12px solid #5D4037;
+}
+
+#snookerCanvas {
+    display: block;
+    background: #1B5E20;
+}
+
+.controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+}
+
+.power-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.power-control label {
+    font-weight: bold;
+}
+
+.power-control input[type="range"] {
+    width: 150px;
+    cursor: pointer;
+}
+
+#powerValue {
+    min-width: 40px;
+    text-align: center;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: all 0.2s;
+}
+
+#resetBtn {
+    background: #f44336;
+    color: white;
+}
+
+#resetBtn:hover {
+    background: #d32f2f;
+}
+
+#placeCueBtn {
+    background: #2196F3;
+    color: white;
+}
+
+#placeCueBtn:hover {
+    background: #1976D2;
+}
+
+.instructions {
+    margin-top: 25px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.instructions h3 {
+    margin-bottom: 10px;
+    color: #4CAF50;
+}
+
+.instructions p {
+    margin: 8px 0;
+    color: #bbb;
+    font-size: 0.95em;
+}
+
+@media (max-width: 900px) {
+    .game-wrapper {
+        flex-direction: column;
+    }
+    
+    .scoreboard {
+        flex-direction: row;
+        width: 100%;
+    }
+    
+    .table-container {
+        width: 100%;
+    }
+    
+    #snookerCanvas {
+        width: 100%;
+        height: auto;
+    }
+}
