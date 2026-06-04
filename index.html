@@ -3,71 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snooker Game</title>
+    <title>Snooker Game - Play Online</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="game-container">
         <header>
             <h1> Snooker Game</h1>
+            <p class="subtitle">Play snooker in your browser - Free & Open Source</p>
         </header>
         
         <div class="game-layout">
             <!-- Left: Player 1 -->
             <div class="player-panel player1-panel">
-                <h2>Player 1</h2>
+                <div class="player-header">
+                    <h2>Player 1</h2>
+                    <div class="player-avatar">P1</div>
+                </div>
                 <div class="score-display" id="score1">0</div>
-                <div class="turn-indicator" id="turn1"></div>
+                <div class="turn-indicator" id="turn1">● YOUR TURN</div>
+                <div class="foul-counter" id="fouls1">Fouls: 0</div>
             </div>
 
             <!-- Center: Game Table -->
             <div class="table-area">
                 <canvas id="gameCanvas"></canvas>
                 <div class="game-controls">
-                    <div class="control-group">
-                        <label>Power:</label>
-                        <input type="range" id="powerSlider" min="5" max="100" value="50">
-                        <span id="powerValue">50%</span>
+                    <div class="control-row">
+                        <div class="control-group">
+                            <label>Power:</label>
+                            <input type="range" id="powerSlider" min="10" max="100" value="50">
+                            <span id="powerValue">50%</span>
+                        </div>
+                        <div class="status-bar">
+                            <span id="turnInfo">Player 1's Turn</span>
+                            <span id="ballOn">Ball On: Red</span>
+                        </div>
                     </div>
-                    <div class="status-bar">
-                        <span id="turnInfo">Player 1's Turn</span>
-                        <span id="ballOn">Ball On: Red</span>
-                        <span id="gameMessage"></span>
-                    </div>
+                    <div id="gameMessage" class="message-bar"></div>
                     <div class="buttons">
                         <button id="resetBtn" class="btn-danger">New Game</button>
                         <button id="placeCueBtn" class="btn-primary">Place Cue Ball</button>
+                        <button id="soundBtn" class="btn-secondary">Sound: ON</button>
                     </div>
                 </div>
             </div>
 
             <!-- Right: Player 2 -->
             <div class="player-panel player2-panel">
-                <h2>Player 2</h2>
+                <div class="player-header">
+                    <h2>Player 2</h2>
+                    <div class="player-avatar">P2</div>
+                </div>
                 <div class="score-display" id="score2">0</div>
-                <div class="turn-indicator" id="turn2"></div>
+                <div class="turn-indicator" id="turn2">● YOUR TURN</div>
+                <div class="foul-counter" id="fouls2">Fouls: 0</div>
             </div>
         </div>
 
         <!-- Instructions -->
         <div class="instructions">
-            <h3>📖 How to Play</h3>
+            <h3> How to Play Snooker</h3>
             <div class="instructions-grid">
                 <div class="instruction-item">
-                    <span class="icon">🎯</span>
-                    <span><strong>Aim & Shoot:</strong> Move mouse to aim, click to shoot</span>
+                    <span class="icon"></span>
+                    <div>
+                        <strong>Aim & Shoot</strong>
+                        <p>Move mouse to aim, click to shoot</p>
+                    </div>
                 </div>
                 <div class="instruction-item">
-                    <span class="icon">🔴</span>
-                    <span><strong>Pot Reds:</strong> Start by potting red balls (1 point each)</span>
+                    <span class="icon"></span>
+                    <div>
+                        <strong>Pot Reds First</strong>
+                        <p>Start by potting red balls (1 point each)</p>
+                    </div>
                 </div>
                 <div class="instruction-item">
-                    <span class="icon">🟡</span>
-                    <span><strong>Follow with Colors:</strong> After red, pot any color (2-7 pts)</span>
+                    <span class="icon"></span>
+                    <div>
+                        <strong>Follow with Colors</strong>
+                        <p>After red, pot any color (2-7 pts)</p>
+                    </div>
                 </div>
                 <div class="instruction-item">
-                    <span class="icon">🏆</span>
-                    <span><strong>Clear Colors:</strong> After all reds, pot colors in order</span>
+                    <span class="icon"></span>
+                    <div>
+                        <strong>Clear Colors</strong>
+                        <p>After all reds, pot colors in order</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ball Values Reference -->
+        <div class="ball-reference">
+            <h4> Ball Values</h4>
+            <div class="ball-values">
+                <div class="ball-value-item">
+                    <span class="ball-color red"></span>
+                    <span>Red = 1</span>
+                </div>
+                <div class="ball-value-item">
+                    <span class="ball-color yellow"></span>
+                    <span>Yellow = 2</span>
+                </div>
+                <div class="ball-value-item">
+                    <span class="ball-color green"></span>
+                    <span>Green = 3</span>
+                </div>
+                <div class="ball-value-item">
+                    <span class="ball-color brown"></span>
+                    <span>Brown = 4</span>
+                </div>
+                <div class="ball-value-item">
+                    <span class="ball-color blue"></span>
+                    <span>Blue = 5</span>
+                </div>
+                <div class="ball-value-item">
+                    <span class="ball-color pink"></span>
+                    <span>Pink = 6</span>
+                </div>
+                <div class="ball-value-item">
+                    <span class="ball-color black"></span>
+                    <span>Black = 7</span>
                 </div>
             </div>
         </div>
